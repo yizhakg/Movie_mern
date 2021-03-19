@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  clear: both;
+  margin: 0;
+  padding: 0;
+}
+.App {
+  background: url("https://wallpapercave.com/wp/wp5758736.jpg");
+  background-color: #999;
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: calc(10px + 2vmin);
+  transition: background .5s ease-in-out;
+}
+.App > div {
+  margin: 20px;
+}
