@@ -1,34 +1,29 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router} from "react-router-dom";
+import MovieRouter from "./service/MovieRouter"
 import "./App.css";
-import Card from "./components/card/Card";
+
+
 function App() {
   const [movies, setMovies] = useState([]);
-
+  //api async fetch
   const getMoviesApi = async () => {
     const results = await fetch(
       "http://localhost:8080/movies/all"
     ).then((res) => res.json());
-    console.log(results);
     setMovies(results.data || []);
   };
 
   useEffect(() => {
     getMoviesApi();
   }, []);
+
   return (
-    <div className="App">
-      {movies.map((movieItm) => (
-        <Card
-          key={movieItm.movieName}
-          name={movieItm.movieName}
-          imageUrl={movieItm.imgUrl}
-          rating={movieItm.rating}
-          year={movieItm.year}
-          summery={movieItm.summery}
-          trailer={movieItm.trailer}
-        />
-      ))}
-    </div>
+    <Router>
+      <div className="App">
+        <MovieRouter movies={movies}/>
+      </div>
+    </Router>
   );
 }
 

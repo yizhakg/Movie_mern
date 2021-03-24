@@ -11,22 +11,17 @@ export default function Card(props) {
     appBackground.backgroundAttachment = "fixed"
     appBackground.backgroundPosition = "center"
   }
-  const changeBackgroundBack = () => {
-    const appBackground = document.querySelector(".App").style;
-    appBackground.backgroundImage = `url("https://wallpapercave.com/wp/wp5758736.jpg")`;
-    appBackground.backgroundSize = "cover"
-    appBackground.backgroundAttachment = "fixed"
-    appBackground.backgroundPosition = "center"
-  }
   const RatingStars = () => {
     let starArray = [];
-    for (let i = 0; i < Math.floor(rating/2); i++) {
+    for (let i = 0; i < Math.floor(rating / 2); i++) {
       starArray.push(<i key={i} className="fas fa-star"></i>)
     }
     return <p className="stars">{starArray}</p>;
   };
   return (
-    <div className="card" onMouseEnter={changeToMovieBackground} onMouseOut={changeBackgroundBack}>
+    <div className="card" onMouseEnter={changeToMovieBackground} >
+      <a className="trailer" href={trailer} target="_blank" rel="noreferrer">
+        <i className="fab fa-youtube"></i></a>
       <div className="imgBox">
         <img
           src={imageUrl}
@@ -44,7 +39,7 @@ export default function Card(props) {
         </div>
         <p className="summery">{summery}</p>
       </div>
-      <span className="trailer"><a href={ trailer } target="_blank">trailer<i className="fab fa-youtube"></i></a></span>
+      <a className="movieLink" href="www.google.com"><i className="fab fa-imdb"></i></a>
     </div>
 
   );

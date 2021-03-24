@@ -1,23 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   box-sizing: border-box;
   clear: both;
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
 .App {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: url("https://wallpapercave.com/wp/wp5758736.jpg");
-  background-color: #999;
+  background-color: #5a5a5a;
   background-size: cover;
   background-attachment: fixed;
   background-blend-mode: overlay;
-  min-height: 100vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-size: calc(10px + 2vmin);
-  transition: background .5s ease-in-out;
+  transition: background 1s ease-in-out;
 }
-.App > div {
-  margin: 20px;
+::-webkit-scrollbar {
+  width: 10px;
+  border: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red;
+
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
 }
